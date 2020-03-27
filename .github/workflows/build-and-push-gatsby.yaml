@@ -25,7 +25,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Switch to working directory for docs
-      run: cd ${WORKDIR}
+      run: |
+        pwd
+        ls -lart
+        cd ${WORKDIR}
     - name: Install dependencies
       run: npm install
     - name: Build Gatbsy docs via npm
